@@ -57,9 +57,9 @@ Before deploying, ensure you have:
 
 4. **Add Environment Variables**
    ```
-   OPENAI_API_KEY=your_openai_api_key
+   OPENAI_API_KEY=your_openai_api_key_here
    MONGODB_URI=your_mongodb_atlas_connection_string
-   JWT_SECRET=your_secure_jwt_secret
+   JWT_SECRET=your_secure_jwt_secret_key
    NODE_ENV=production
    PORT=10000
    ```
