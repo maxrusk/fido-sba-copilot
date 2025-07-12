@@ -1,0 +1,44 @@
+{
+  "name": "fido-sba-copilot",
+  "version": "1.0.0",
+  "description": "AI-powered SBA loan guidance chatbot with business plan builder",
+  "main": "backend/index.js",
+  "scripts": {
+    "start": "node backend/index.js",
+    "dev": "nodemon backend/index.js",
+    "frontend": "cd frontend && python3 -m http.server 5500",
+    "dev:full": "concurrently \"npm run dev\" \"npm run frontend\"",
+    "install:all": "npm install && cd backend && npm install",
+    "test": "echo \"No tests specified\" && exit 0",
+    "build": "echo \"No build step required\"",
+    "deploy:check": "node scripts/deploy-check.js",
+    "health": "curl http://localhost:3000/health"
+  },
+  "keywords": [
+    "sba",
+    "loan",
+    "chatbot",
+    "ai",
+    "business-plan",
+    "entrepreneur",
+    "fintech"
+  ],
+  "author": "Fido Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0",
+    "concurrently": "^8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/fido-sba-copilot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/fido-sba-copilot/issues"
+  },
+  "homepage": "https://github.com/yourusername/fido-sba-copilot#readme"
+} 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Fido – SBA Copilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="public/styles.css" />
+</head>
+<body>
+  <div class="fido-bg"></div>
+  <main id="fido-app">
+    <header class="fido-header">
+      <div class="fido-logo">
+        <svg width="64" height="32" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="24" font-family="Inter, sans-serif" font-size="32" font-weight="700" fill="url(#fido-gradient)">fido</text>
+          <defs>
+            <linearGradient id="fido-gradient" x1="0" y1="0" x2="64" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#7F7FD5"/>
+              <stop offset="1" stop-color="#E684AE"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="fido-agent">
+        <span class="fido-status-dot"></span>
+        <span class="fido-agent-name">Fido</span>
+      </div>
+    </header>
+    <!-- Auth Overlay -->
+    <section id="auth-overlay" class="auth-overlay">
+      <div class="auth-card">
+        <h2>Sign in to Fido</h2>
+        <form id="login-form" autocomplete="off">
+          <input type="email" id="login-email" placeholder="Email" required autocomplete="username" />
+          <input type="password" id="login-password" placeholder="Password" required autocomplete="current-password" />
+          <button type="submit" class="auth-btn">Sign In</button>
+        </form>
+        <div class="auth-divider">or</div>
+        <form id="signup-form" autocomplete="off">
+          <input type="text" id="signup-name" placeholder="Name" required autocomplete="name" />
+          <input type="email" id="signup-email" placeholder="Email" required autocomplete="username" />
+          <input type="password" id="signup-password" placeholder="Password" required autocomplete="new-password" />
+          <button type="submit" class="auth-btn alt">Create Account</button>
+        </form>
+        <div id="auth-message" class="auth-message"></div>
+      </div>
+    </section>
+    <!-- End Auth Overlay -->
+    <section id="fido-chat-container" style="display:none;">
+      <div id="chat">
+        <div class="welcome-message">
+          Welcome to Fido. Your SBA Copilot for business funding and empowerment.
+        </div>
+      </div>
+      <form id="input-area" autocomplete="off" onsubmit="event.preventDefault(); sendMessage();">
+        <input type="text" id="msg" placeholder="Type your message…" autocomplete="off" />
+        <button type="submit" id="send-btn" aria-label="Send">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14" cy="14" r="14" fill="url(#send-gradient)"/>
+            <path d="M9 14L19 14M19 14L15 10M19 14L15 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="send-gradient" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#7F7FD5"/>
+                <stop offset="1" stop-color="#E684AE"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </button>
+      </form>
+    </section>
+  </main>
+  <script src="public/main.js"></script>
+  <script src="public/auth.js"></script>
+</body>
+</html>
