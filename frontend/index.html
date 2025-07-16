@@ -13,11 +13,92 @@
   <div class="fido-bg"></div>
   <main id="fido-app">
     <header class="fido-header">
-      <div class="fido-logo">
-        <svg width="64" height="32" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="24" font-family="Inter, sans-serif" font-size="32" font-weight="700" fill="url(#fido-gradient)">fido</text>
-          <defs>
-            <linearGradient id="fido-gradient" x1="0" y1="0" x2="64" y2="32" gradientUnits="userSpaceOnUse">
+      <div class="fido-logo">fido</div>
+      <div class="user-info" id="user-info" style="display: none;">
+        <span>Welcome, <span id="user-name"></span></span>
+        <button id="logout-btn" class="logout-btn">Logout</button>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <!-- Authentication Container -->
+      <div id="auth-container">
+        <div class="auth-tabs">
+          <button class="tab-btn active" data-tab="login">Login</button>
+          <button class="tab-btn" data-tab="signup">Sign Up</button>
+        </div>
+
+        <!-- Login Tab -->
+        <div id="login-tab" class="tab-content active">
+          <form id="login-form">
+            <div class="form-group">
+              <label for="login-email">Email</label>
+              <input type="email" id="login-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="login-password">Password</label>
+              <input type="password" id="login-password" name="password" required>
+            </div>
+            <button type="submit" class="auth-btn">Login</button>
+          </form>
+        </div>
+
+        <!-- Signup Tab -->
+        <div id="signup-tab" class="tab-content">
+          <form id="signup-form">
+            <div class="form-group">
+              <label for="signup-name">Full Name</label>
+              <input type="text" id="signup-name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-email">Email</label>
+              <input type="email" id="signup-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-password">Password</label>
+              <input type="password" id="signup-password" name="password" required minlength="6">
+            </div>
+            <button type="submit" class="auth-btn">Sign Up</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Chat Container -->
+      <div id="chat-container" style="display: none;">
+        <div class="chat-header">
+          <h2>🐕 Fido SBA Copilot</h2>
+          <p>Your AI-powered SBA loan advisor and business plan builder</p>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+          <!-- Messages will be dynamically added here -->
+        </div>
+
+        <div class="chat-input">
+          <form id="chat-form" class="chat-form">
+            <input 
+              type="text" 
+              id="message-input" 
+              class="message-input" 
+              placeholder="Ask Fido about SBA loans or your business plan..."
+              required
+            >
+            <button type="submit" class="send-btn">➤</button>
+          </form>
+        </div>
+
+        <div class="chat-actions">
+          <button id="export-btn" class="export-btn">📄 Export Business Plan</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="public/config.js"></script>
+  <script src="public/main.js"></script>
+</body>
+</html>
               <stop stop-color="#7F7FD5"/>
               <stop offset="1" stop-color="#E684AE"/>
             </linearGradient>

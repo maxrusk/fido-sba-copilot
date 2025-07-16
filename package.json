@@ -12,7 +12,16 @@
     "test": "echo \"No tests specified\" && exit 0",
     "build": "echo \"No build step required\"",
     "deploy:check": "node scripts/deploy-check.js",
-    "health": "curl http://localhost:3000/health"
+    "health": "curl http://localhost:3000/health",
+    "docker:build": "docker build -t fido-sba-copilot .",
+    "docker:run": "docker run -p 80:80 -p 3000:3000 fido-sba-copilot",
+    "docker:compose": "docker-compose up -d",
+    "docker:compose:down": "docker-compose down",
+    "setup:env": "cp backend/.env.example backend/.env",
+    "setup:github": "bash scripts/setup-github.sh",
+    "deploy:render": "echo 'Deploy to Render via GitHub Actions or manual deployment'",
+    "deploy:vercel": "echo 'Deploy to Vercel via GitHub Actions or Vercel CLI'",
+    "deploy:railway": "echo 'Deploy to Railway via GitHub Actions or Railway CLI'"
   },
   "keywords": [
     "sba",
